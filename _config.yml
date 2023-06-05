@@ -41,3 +41,4 @@ defaults:
     values:
       tags: Other
  permalink: /:title.html
+ 
