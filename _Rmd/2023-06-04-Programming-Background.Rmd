@@ -1,0 +1,49 @@
+---
+title: "Programming Background"
+author: "Grace Holliday"
+date: "2023-06-05"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+library('rmarkdown')
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.path = "../images/")
+## render("C:/Users/Sarah/Documents/ghollid.github.io/_Rmd/2023-06-04-Programming-Background.Rmd",output_format="github_document",output_dir="../_posts/",output_options=list(keep_html=FALSE)) ## 
+
+```
+
+## My programming background:
+
+The other programming software I have primarily used is SAS.  My thoughts on R 
+as compared to SAS are that I have more experience with R (given previous
+experiences prior to the course), so I tend to lean on it more often than not.
+That being said, I do currently work in statistical programming where we use 
+SAS for everything!  I think that R is much more user friendly than SAS and 
+other languages and I appreciated that when I first learned it.  I think I 
+would have had a harder time learning SAS had I not learned R (or some other
+software like MATLab (not my favorite haha)) first.  I enjoy the object-
+oriented functionality in R.  I often find myself writing SAS code and thinking
+"I know exactly how I would do this if I was only using R!" and I think that is
+a huge factor in that.  I like that it is open-source and free, and that there
+is likely a package out there for almost anything you can think of.  I do miss
+that SAS is not case sensitive!  Switching between the two I constantly find 
+myself calling functions or packages that don't exist in R because of some
+difference in the casing I used to call it.  I definitely don't consider R as a
+difficult language to learn.  It's very easy to pick up on and find resources/
+communities online that will be helpful if you need it.  My experience first 
+learning R came in an undergraduate research lab at Clemson University.  As an
+interdisciplinary biology lab, R is primarily used for any analyses they may 
+need to run and I was taught on a bit of a 'need-to-know' basis and eventually
+became independent enough in R that I could manage almost anything on my own. 
+It was an extremely valuable experience and has allowed me to succeed not only 
+in this class so far, but in my own research collaborations.
+
+## Example R Markdown Output
+
+```{r, echo=TRUE}
+plot(iris)
+```
+
+
+
