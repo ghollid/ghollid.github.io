@@ -3,8 +3,6 @@ Project 1
 Grace Holliday
 2023-06-22
 
-## Project 1 
-
 In my project, I chose to explore the Open Movie Database (OMDb) API.  I built 
 a variety of functions with various endpoints and ran some exploratory data 
 analysis.  Much of the output from my functions depends on what movies are put 
