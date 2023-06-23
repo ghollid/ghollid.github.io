@@ -1,0 +1,94 @@
+---
+title: "Favorite Aspect of R Learned in This Course"
+author: "Grace Holliday"
+date: "2023-06-05"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+library('rmarkdown')
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.path = "../images/")
+library('tidyverse')
+library('caret')
+
+## render("C:/Users/Sarah/Documents/ghollid.github.io/_Rmd/2023-06-23-Favorite-Aspects-of-R.Rmd",output_format="github_document",output_dir="../_posts/",output_options=list(keep_html=FALSE)) ## 
+
+```
+
+# The Coolest Thing I've Learned About Programming in R
+
+Given that I have a fair amount of experience with R and more specifically, 
+ggplot and the tidyverse, I wouldn't consider these to be the most interesting
+this I have learned in this course.  I think I would say what we have learned 
+starting in the end of last unit and the beginning of this one is what I find 
+most interesting, being parallel computing and (broadly) machine learning.  I 
+have enjoyed learning the application of statistical methods in R more than 
+anything thus far.  
+
+## Parallel Computing Example Code
+Below is a brief example (from HW) of how you may implement parallel computing 
+using R.  This example uses different cores to apply the Lapply function many 
+different times, simultaneously. 
+
+```{r, echo=TRUE, eval=FALSE}
+# establishing clusters
+library('parallel')
+cores <- detectCores()
+cores
+
+cluster <- makeCluster(cores-1)
+clusterEvalQ(cluster,library(tidyverse))
+
+clusterExport(cluster,list("fun","reject2","teststat"))
+xyz <- parLapply(cl=cluster,1:length(X), fun,data=X)
+
+parResults = data.frame(expand.grid(list(ss,shapes)))
+parResults$results <- unlist(xyz)
+colnames(parResults)[1] <- "n"
+colnames(parResults)[2] <- "Shape"
+parResults
+
+```
+
+## (Basic) Machine Learning Example Code
+The below code is a brief example of some basic machine learning.  It takes
+data from the **iris** dataset and splits it into a training and test set.  It 
+then fits two different models using 5-fold cross validation and compares the 
+two using their RMSE and R^2^ values to determine which is the better model.
+After this, it uses the better model on the test data to explore how good of a 
+fit for the data this model is. 
+
+```{r, echo=TRUE, eval=TRUE}
+# splitting data
+train <- sample(1:nrow(iris), size = nrow(iris)*.75)
+test <- setdiff(1:nrow(iris), train)
+
+# training and testing subsets
+irisTrain <- iris[train, ]
+irisTest <- iris[test, ]
+
+# fitting a model using 5-fold cross validation and RMSE as metrics
+mod1 <- train(Petal.Length ~ Sepal.Length + Sepal.Width ,data=iris, method='lm',
+                preProcess=c("center","scale"),
+                trControl=trainControl(method='cv',number=5))
+
+mod1
+
+## fitting another model
+mod2 <- train(Petal.Length ~ I(Sepal.Length^2)+Species+Sepal.Width,
+                data=iris, method='lm',
+                preProcess=c("center","scale"),
+                trControl=trainControl(method='cv',number=5))
+
+mod2
+
+## Comparing results
+# compile results for all models for training set
+data.frame(t(mod1$results), t(mod2$results))
+
+#taking best model (Mod2) and using it on test data
+pred <- predict(mod2, newdata=irisTest)
+postResample(pred,obs=irisTest$Petal.Length)
+```
+```
