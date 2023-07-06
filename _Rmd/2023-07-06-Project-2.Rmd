@@ -1,0 +1,23 @@
+---
+title: "Project 2"
+author: "Grace Holliday"
+date: "2023-07-06"
+output: github_document
+---
+
+```{r,echo=FALSE,eval=FALSE}
+## render("C:/Users/Sarah/Documents/ghollid.github.io/_Rmd/2023-07-06-Project-2.Rmd",output_format="github_document",output_dir="../_posts/",output_options=list(keep_html=FALSE))
+```
+
+## Project Overview
+
+Our project explores the use of R to conduct basic machine learning methods, such as linear models, random forests, and boosting.  To do this, we produce these models for each of six data channels: business, entertainment, lifestyle, social mediea, tech, and world.  We explore how different variables (keywords, images, videos, etc.) influence the amount of shares articles in these channels receives. We first produce basic summary statistics and graphs to explore the data.  We then fit four different models and evaluate which is the "best" based on their RMSE values, for each channel.  
+
+Links:  
+[Github Pages](https://dadambro.github.io/project-2C/)  
+[Basic Repo](https://github.com/dadambro/project-2C)
+
+
+## Reflection 
+
+Overall, this project went very smoothly.  My partner and I worked well together and were both motivated to complete the project.  If I were to do anything differently, I would probably attempt to parallelize the automation of the output for the six different channels.  As the code currently runs, it takes ~2 hours to complete rendering.  It is the random forest that does it, and I wonder if an attempt to run in parallel would cut down on this run time.  The most difficult part for me would have to be automating the production.  Like I said before, the render time is so long that if there is an issue, you find out about it 2 hours after you submitted the code, and then have to resubmit.  I could have cut down on this, but it was a learning process.  My big takeaways from this project are the use and comparison of different models.  I found it very interesting to run each model and explore how close they were able to predict the amount of shares for each channel.
