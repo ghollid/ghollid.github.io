@@ -1,0 +1,39 @@
+---
+title: "Moving Forward"
+author: "Grace Holliday"
+date: "2023-07-13"
+output: github_document
+---
+
+```{r,echo=FALSE,eval=FALSE}
+library(rmarkdown)
+## render("C:/Users/Sarah/Documents/ghollid.github.io/_Rmd/2023-07-12-Moving-Forward.Rmd",output_format="github_document",output_dir="../_posts/",output_options=list(keep_html=FALSE))
+```
+
+## Thoughts on Using R for Data Science  
+My current thoughts on the use of R for data science are that R has proven to 
+be very versatile and relatively easy to learn.  I will definitely continue to 
+use R going forward.  I have already been involved in projects that use R
+before I took this course and feel as though I now have more skills that I can
+apply in the future.  R being free and open source with packages out there for
+nearly anything you could want also is a major plus.  
+
+## What I will do differently in practice  
+Now that I have taken this course, there are a few things that will change in 
+my programming.  For starters, I used to rarely ever use the R markdown 
+functionality.  I just didn't feel a need to and those I  have collaborated with 
+rarely used it as well.  However, while I see no problem with not using 
+markdown, it would almost feel wrong of me to not use it.  It makes it easier
+to collaborate effectively and remember what is going on in your code.  I have 
+been introduced to some functions and packages that will make some aspects of 
+data manipulation easier, and I will likely use chaining going forward. 
+
+## What areas of data science would I explore further?  
+I think the primary area of data science from this course that I would be 
+interested in exploring further would have to be machine learning.  I know how
+relevant this is in the job market in not only statistics, but in Computer 
+Engineering/Software Engineering/Many other fields, and think that having more 
+background in this will be helpful in my career going forward.  Specifically,
+I would love to learn about neural networks/AI/deep learning at some point in 
+the future.
+
